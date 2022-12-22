@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmgntvya0v74f"]
+
+[ext_resource type="Texture2D" uid="uid://bfwb3kox5pygg" path="res://Hunter.png" id="1_cewv7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2lbtf"]
+height = 64.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(618, 283)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cewv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, 2)
+shape = SubResource("CapsuleShape2D_2lbtf")
