@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://boeov3wdcr0qy"]
+
+[ext_resource type="Texture2D" uid="uid://0ofudcxhfgkv" path="res://GFX/Cobble.png" id="1_d4twp"]
+
+[node name="CobbleSprite" type="Sprite2D"]
+texture = ExtResource("1_d4twp")

@@ -8,9 +8,129 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "State",
+"class": &"AnimationState",
+"language": &"GDScript",
+"path": "res://addons/simple-state/classes/animation_state.gd"
+}, {
+"base": "Node",
+"class": &"BaseState",
+"language": &"GDScript",
+"path": "res://Assets/Player/base_state.gd"
+}, {
+"base": "CharacterBody2D",
+"class": &"Player",
+"language": &"GDScript",
+"path": "res://Assets/Player/player.gd"
+}, {
+"base": "Camera2D",
+"class": &"PlayerCamera",
+"language": &"GDScript",
+"path": "res://Assets/Player/Camera2D.gd"
+}, {
+"base": "AnimatedSprite2D",
+"class": &"PlayerSprite",
+"language": &"GDScript",
+"path": "res://Assets/Player/AnimatedSprite2D.gd"
+}, {
+"base": "State",
+"class": &"RandomState",
+"language": &"GDScript",
+"path": "res://addons/simple-state/classes/random_state.gd"
+}, {
+"base": "State",
+"class": &"SequenceState",
+"language": &"GDScript",
+"path": "res://addons/simple-state/classes/sequence_state.gd"
+}, {
+"base": "Node",
+"class": &"State",
+"language": &"GDScript",
+"path": "res://addons/simple-state/classes/state.gd"
+}]
+_global_script_class_icons={
+"AnimationState": "res://addons/simple-state/icons/animation_state.png",
+"BaseState": "",
+"Player": "",
+"PlayerCamera": "",
+"PlayerSprite": "",
+"RandomState": "res://addons/simple-state/icons/random_state.png",
+"SequenceState": "res://addons/simple-state/icons/sequence_state.png",
+"State": "res://addons/simple-state/icons/state.png"
+}
+
 [application]
 
 config/name="Hunter"
 run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/vsync/vsync_mode=2
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray()
+
+[input]
+
+down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":83,"physical_keycode":0,"unicode":0,"echo":false,"script":null)
+]
+}
+left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":65,"physical_keycode":0,"unicode":0,"echo":false,"script":null)
+]
+}
+right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":68,"physical_keycode":0,"unicode":0,"echo":false,"script":null)
+]
+}
+uparrow={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"unicode":0,"echo":false,"script":null)
+]
+}
+downarrow={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"unicode":0,"echo":false,"script":null)
+]
+}
+rightarrow={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"unicode":0,"echo":false,"script":null)
+]
+}
+leftarrow={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"unicode":0,"echo":false,"script":null)
+]
+}
+jump={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"unicode":0,"echo":false,"script":null)
+]
+}
+dash={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"unicode":0,"echo":false,"script":null)
+]
+}
+
+[physics]
+
+2d/physics_engine="GodotPhysics2D"

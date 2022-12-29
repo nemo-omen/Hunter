@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b5dypqsx5vkb"]
+
+[node name="LightPoly1" type="Polygon2D"]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(182, -341, 320, -345, 764, -95, 738, -96, 738, 30, 577, 32, 576, 130, 471, 130, 382, 0, 266, 0, 183, -49)

@@ -1,0 +1,115 @@
+[gd_scene load_steps=20 format=3 uid="uid://ca87cokrl525a"]
+
+[ext_resource type="Script" path="res://Assets/Player/player.gd" id="1_15og0"]
+[ext_resource type="Texture2D" uid="uid://b7l3ljhwdmjip" path="res://GFX/MildLight.png" id="2_kcwil"]
+[ext_resource type="Script" path="res://Assets/Player/Camera2D.gd" id="2_y3m7m"]
+[ext_resource type="Texture2D" uid="uid://7pt2wymp5iqx" path="res://GFX/hunterrun0000.png" id="4_5yeca"]
+[ext_resource type="Texture2D" uid="uid://6rcgjxs7l8cl" path="res://GFX/hunterrun0004.png" id="5_kiqsf"]
+[ext_resource type="Texture2D" uid="uid://dy6rjdl4cf3hv" path="res://GFX/hunterrun0006.png" id="6_vifoo"]
+[ext_resource type="Texture2D" uid="uid://caatttjkni15l" path="res://GFX/hunterrun0001.png" id="7_i57fr"]
+[ext_resource type="Texture2D" uid="uid://dstoe3iwbqaal" path="res://GFX/hunterrun0002.png" id="7_xj2s6"]
+[ext_resource type="Texture2D" uid="uid://bvof733oha1fc" path="res://GFX/hunterrun0003.png" id="9_3a3ox"]
+[ext_resource type="Texture2D" uid="uid://g8d8oiisobc6" path="res://GFX/hunterrun0005.png" id="10_6cfli"]
+[ext_resource type="Texture2D" uid="uid://bodmj81e3liyp" path="res://GFX/hunterrun0007.png" id="11_qf55p"]
+[ext_resource type="Script" path="res://Assets/Player/AnimatedSprite2D.gd" id="12_8mijn"]
+[ext_resource type="Script" path="res://Assets/Player/state_manager.gd" id="13_l12rt"]
+[ext_resource type="Script" path="res://Assets/Player/idle.gd" id="14_2fet2"]
+[ext_resource type="Script" path="res://Assets/Player/run.gd" id="15_nod5l"]
+[ext_resource type="Script" path="res://Assets/Player/jump.gd" id="16_7glxh"]
+[ext_resource type="Script" path="res://Assets/Player/fall.gd" id="17_86aad"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6wge"]
+radius = 38.0
+height = 144.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i17q2"]
+animations = [{
+"frames": [ExtResource("9_3a3ox")],
+"loop": false,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [ExtResource("6_vifoo")],
+"loop": false,
+"name": &"fall",
+"speed": 8.0
+}, {
+"frames": [ExtResource("6_vifoo")],
+"loop": false,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [ExtResource("7_xj2s6"), ExtResource("11_qf55p"), ExtResource("4_5yeca")],
+"loop": false,
+"name": &"jump",
+"speed": 12.0
+}, {
+"frames": [ExtResource("4_5yeca"), ExtResource("7_i57fr"), ExtResource("7_xj2s6"), ExtResource("9_3a3ox"), ExtResource("5_kiqsf"), ExtResource("10_6cfli"), ExtResource("6_vifoo"), ExtResource("11_qf55p")],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+light_mask = 7
+visibility_layer = 3
+position = Vector2(620, 283)
+script = ExtResource("1_15og0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_smoothed = true
+position_smoothing_enabled = true
+script = ExtResource("2_y3m7m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_e6wge")
+debug_color = Color(0.34902, 0.482353, 1, 0.823529)
+
+[node name="InnerDarkness" type="PointLight2D" parent="."]
+visible = false
+light_mask = 2
+visibility_layer = 2
+blend_mode = 1
+range_item_cull_mask = 2
+shadow_item_cull_mask = 2
+texture = ExtResource("2_kcwil")
+texture_scale = 3.5
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+modulate = Color(0.827451, 0.827451, 0.827451, 1)
+position = Vector2(-0.999995, 2.08511)
+scale = Vector2(2, 3.17021)
+color = Color(1, 0.466667, 0.403922, 1)
+polygon = PackedVector2Array(-16, -24, 17, -24, 17, 23, -16, 23)
+
+[node name="animations" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+frames = SubResource("SpriteFrames_i17q2")
+animation = &"dash"
+script = ExtResource("12_8mijn")
+
+[node name="state_manager" type="Node" parent="."]
+script = ExtResource("13_l12rt")
+
+[node name="fall" type="Node" parent="state_manager"]
+script = ExtResource("17_86aad")
+animation_name = "fall"
+
+[node name="idle" type="Node" parent="state_manager"]
+script = ExtResource("14_2fet2")
+animation_name = "idle"
+
+[node name="jump" type="Node" parent="state_manager"]
+script = ExtResource("16_7glxh")
+animation_name = "jump"
+
+[node name="run" type="Node" parent="state_manager"]
+script = ExtResource("15_nod5l")
+animation_name = "run"
+
+[connection signal="animate" from="." to="animations" method="_on_player_animate"]
+[connection signal="camreset" from="." to="Camera2D" method="_on_player_camreset"]
+[connection signal="peek" from="." to="Camera2D" method="_on_player_peek"]

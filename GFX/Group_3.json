@@ -1,0 +1,63 @@
+{
+    "name": "Group_3",
+    "nodes": [
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "CobbleGround.kra",
+            "node_path": "CobbleGround.kra",
+            "offset": [
+                -99.5,
+                143.5
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                0,
+                88
+            ],
+            "resource_path": "export/Group_3/CobbleGround.kra.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": -1
+        },
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "Cobbles.kra",
+            "node_path": "Cobbles.kra",
+            "offset": [
+                -99.5,
+                143.5
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                0,
+                0
+            ],
+            "resource_path": "export/Group_3/Cobbles.kra.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": 0
+        }
+    ]
+}

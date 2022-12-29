@@ -1,0 +1,34 @@
+{
+    "name": "Path",
+    "nodes": [
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "Path.kra",
+            "node_path": "Path.kra",
+            "offset": [
+                -99.5,
+                99.5
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                0,
+                0
+            ],
+            "resource_path": "export/Path/Path.kra.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": 0
+        }
+    ]
+}

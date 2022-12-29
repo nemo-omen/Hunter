@@ -1,0 +1,208 @@
+{
+    "name": "root",
+    "nodes": [
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "Paint_Layer_1",
+            "node_path": "Paint_Layer_1",
+            "offset": [
+                -499.5,
+                499.5
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                0,
+                0
+            ],
+            "resource_path": "export/Paint_Layer_1.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": -6
+        },
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "Background",
+            "node_path": "Background",
+            "offset": [
+                -499.5,
+                499.5
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                -87,
+                0
+            ],
+            "resource_path": "export/Background.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": -5
+        },
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "CobbleTop.kra",
+            "node_path": "CobbleTop.kra",
+            "offset": [
+                -499.5,
+                499.5
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                599,
+                201
+            ],
+            "resource_path": "export/CobbleTop.kra.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": -4
+        },
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "__Array_of_CobbleGround.kra",
+            "node_path": "__Array_of_CobbleGround.kra",
+            "offset": [
+                -499.5,
+                499.5
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                0,
+                31
+            ],
+            "resource_path": "export/__Array_of_CobbleGround.kra.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": -3
+        },
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "Group_3",
+            "node_path": "Group_3",
+            "offset": [
+                -499.5,
+                499.5
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                100,
+                512
+            ],
+            "resource_path": "export/Group_3.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": -2
+        },
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "__Array_of_Cobbles.kra",
+            "node_path": "__Array_of_Cobbles.kra",
+            "offset": [
+                -499.5,
+                499.5
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                0,
+                13
+            ],
+            "resource_path": "export/__Array_of_Cobbles.kra.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": -1
+        },
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "decorations-wrapper-layer",
+            "node_path": "decorations-wrapper-layer",
+            "offset": [
+                -499.5,
+                499.5
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                0,
+                0
+            ],
+            "resource_path": "export/decorations-wrapper-layer.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": 0
+        }
+    ]
+}
