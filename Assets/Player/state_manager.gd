@@ -6,8 +6,8 @@ extends Node
 	BaseState.State.Run: $run,
 	BaseState.State.Fall: $fall,
 	BaseState.State.Jump: $jump,
+	BaseState.State.Dash: $dash
 }
-
 # hold on to the current state
 var current_state: BaseState
 

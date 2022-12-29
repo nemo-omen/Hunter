@@ -19,6 +19,10 @@ func enter(last_state: int) -> void:
 func input(event: InputEvent) -> int:
 	if Input.is_action_just_pressed('jump'):
 		buffer_timer = jump_buffer
+	
+	if last_state != State.Dash and Input.is_action_just_pressed("dash"):
+		return State.Dash
+	
 	return State.Null
 
 func physics_process(delta: float) -> int:

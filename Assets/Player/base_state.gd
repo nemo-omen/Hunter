@@ -6,7 +6,8 @@ enum State {
 	Idle,
 	Run,
 	Fall,
-	Jump
+	Jump,
+	Dash
 }
 
 @export var animation_name: String

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ca87cokrl525a"]
+[gd_scene load_steps=21 format=3 uid="uid://ca87cokrl525a"]
 
 [ext_resource type="Script" path="res://Assets/Player/player.gd" id="1_15og0"]
 [ext_resource type="Texture2D" uid="uid://b7l3ljhwdmjip" path="res://GFX/MildLight.png" id="2_kcwil"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://Assets/Player/run.gd" id="15_nod5l"]
 [ext_resource type="Script" path="res://Assets/Player/jump.gd" id="16_7glxh"]
 [ext_resource type="Script" path="res://Assets/Player/fall.gd" id="17_86aad"]
+[ext_resource type="Script" path="res://Assets/Player/dash.gd" id="18_0003m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6wge"]
 radius = 38.0
@@ -109,6 +110,9 @@ animation_name = "jump"
 [node name="run" type="Node" parent="state_manager"]
 script = ExtResource("15_nod5l")
 animation_name = "run"
+
+[node name="dash" type="Node" parent="state_manager"]
+script = ExtResource("18_0003m")
 
 [connection signal="animate" from="." to="animations" method="_on_player_animate"]
 [connection signal="camreset" from="." to="Camera2D" method="_on_player_camreset"]

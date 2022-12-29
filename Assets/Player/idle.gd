@@ -5,6 +5,8 @@ func input(event: InputEvent) -> int:
 		return State.Run
 	elif Input.is_action_just_pressed("jump"):
 		return State.Jump
+	elif Input.is_action_just_pressed("dash"):
+		return State.Dash
 	return State.Null
 
 func physics_process(delta: float) -> int:

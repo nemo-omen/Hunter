@@ -14,6 +14,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animations = $animations
 @onready var states = $state_manager
 
+var move: int = 0
+
 signal animate
 signal peek
 signal camreset
@@ -28,6 +30,12 @@ func _physics_process(delta: float) -> void:
 	states.physics_process(delta)
 	_peek()
 	cam_reset()
+
+func direction() -> int:
+	if $animations.flip_h == true:
+		return -1
+	else:
+		return 1
 #func _physics_process(delta):
 #	# Add the gravity.
 #	if not is_on_floor():
