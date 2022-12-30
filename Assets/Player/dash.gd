@@ -14,6 +14,20 @@ func enter(last_state: int) -> void:
 	player.move = player.direction()
 
 func input(event: InputEvent) -> int:
+	if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
+		if player.is_on_floor():
+			return State.Run
+		else:
+			return State.Fall
+		
+	if Input.is_action_just_pressed("jump"):
+		if player.is_on_floor():
+			return State.Jump
+		else:
+			if last_state != State.Jump:
+				return State.Jump
+			else:
+				return State.Fall
 	return State.Null
 
 

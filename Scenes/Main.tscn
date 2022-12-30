@@ -1,98 +1,148 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3f8d7mgqvf52"]
+[gd_scene load_steps=8 format=3 uid="uid://c3f8d7mgqvf52"]
 
-[ext_resource type="Texture2D" uid="uid://ca38r8igasyut" path="res://GFX/GradBG.png" id="1_aoxn5"]
+[ext_resource type="Texture2D" uid="uid://clgv31e1smim4" path="res://GFX/GrayTile.png" id="1_81w23"]
 [ext_resource type="PackedScene" uid="uid://ca87cokrl525a" path="res://Assets/Player/Player.tscn" id="1_j5njf"]
-[ext_resource type="Texture2D" uid="uid://wulf72at3j5t" path="res://GFX/Walk.png" id="2_hjnlx"]
-[ext_resource type="Texture2D" uid="uid://cqugoswakv0b5" path="res://GFX/Platform.png" id="2_khsmb"]
-[ext_resource type="Texture2D" uid="uid://bitpvdajen1f" path="res://GFX/GrassFG2.png" id="3_1ix38"]
-[ext_resource type="Texture2D" uid="uid://bw8c27163m4u4" path="res://GFX/GrassFG.png" id="3_aodxj"]
+[ext_resource type="Texture2D" uid="uid://2v6pdntct3ki" path="res://GFX/TestScene/Rock1.png" id="3_cf4og"]
+[ext_resource type="Texture2D" uid="uid://cvqft0qonhxar" path="res://GFX/TestScene/Path.png" id="4_qvf5c"]
 [ext_resource type="Texture2D" uid="uid://cnl64sj5g575p" path="res://GFX/MtBG.png" id="5_0uvb8"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2su2p"]
-texture = ExtResource("2_khsmb")
-texture_region_size = Vector2i(600, 415)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yi865"]
+texture = ExtResource("1_81w23")
+texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-298, -189, 299.5, -192.5, 295, -85, 171, 199.5, -251.5, 57.5, -294, -52.5)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jpaj2"]
-texture = ExtResource("2_hjnlx")
-texture_region_size = Vector2i(200, 100)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-100, -48, 100, -48.5, 100, 50, -100, 50)
-
-[sub_resource type="TileSet" id="TileSet_xynjm"]
-tile_size = Vector2i(200, 100)
+[sub_resource type="TileSet" id="TileSet_v1v7s"]
+tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_2su2p")
-sources/1 = SubResource("TileSetAtlasSource_jpaj2")
+sources/0 = SubResource("TileSetAtlasSource_yi865")
 
 [node name="Node2D" type="Node2D"]
 
-[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
-scroll_ignore_camera_zoom = true
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_v1v7s")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(1245183, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0, 1179678, 0, 0, 1179679, 0, 0, 1179680, 0, 0, 1179681, 0, 0, 1179682, 0, 0, 1179683, 0, 0, 1179684, 0, 0, 1179685, 0, 0, 1179686, 0, 0, 1179687, 0, 0, 1179690, 0, 0, 1179691, 0, 0, 1179688, 0, 0, 1179689, 0, 0, 1179692, 0, 0, 1179693, 0, 0, 1179694, 0, 0, 1179695, 0, 0, 1179696, 0, 0, 1179697, 0, 0, 1179698, 0, 0, 1179699, 0, 0, 1179700, 0, 0, 1179701, 0, 0, 1179702, 0, 0, 1179703, 0, 0, 1179704, 0, 0, 1179705, 0, 0, 1179706, 0, 0, 1179707, 0, 0, 1179708, 0, 0, 1179709, 0, 0, 1179710, 0, 0, 1179711, 0, 0, 1179712, 0, 0, 1179713, 0, 0, 1179714, 0, 0, 1179715, 0, 0, 1179716, 0, 0, 1179717, 0, 0, 1179718, 0, 0, 1179719, 0, 0, 1179720, 0, 0, 1179721, 0, 0, 1179722, 0, 0, 1179723, 0, 0, 1179724, 0, 0, 1179725, 0, 0, 1179726, 0, 0, 1179727, 0, 0, 1179728, 0, 0, 1179729, 0, 0, 1179730, 0, 0, 1179731, 0, 0, 1179732, 0, 0, 1179733, 0, 0, 1179734, 0, 0, 1179735, 0, 0, 1179736, 0, 0, 1179737, 0, 0, 1179738, 0, 0, 1179739, 0, 0, 1179740, 0, 0, 1179741, 0, 0, 1179742, 0, 0, 1179743, 0, 0, 1179839, 0, 0, 1179838, 0, 0, 1179837, 0, 0, 1179836, 0, 0, 1179835, 0, 0, 1179834, 0, 0, 1179833, 0, 0, 1179832, 0, 0, 1179831, 0, 0, 1179830, 0, 0, 1179829, 0, 0, 1179828, 0, 0, 1179827, 0, 0, 1179826, 0, 0, 1179825, 0, 0, 1179824, 0, 0, 1179823, 0, 0, 1179822, 0, 0, 1179821, 0, 0, 1179820, 0, 0, 1179819, 0, 0, 1179818, 0, 0, 1179817, 0, 0, 1179816, 0, 0, 1179815, 0, 0, 1179814, 0, 0, 1179813, 0, 0, 1179812, 0, 0, 1179811, 0, 0, 1179810, 0, 0, 1179809, 0, 0, 1179808, 0, 0, 1179807, 0, 0, 1179806, 0, 0, 1179805, 0, 0, 1179804, 0, 0, 1179803, 0, 0, 1179802, 0, 0, 1179801, 0, 0, 1179800, 0, 0, 1179799, 0, 0, 1179798, 0, 0, 1179797, 0, 0, 1179796, 0, 0, 1179795, 0, 0, 1179794, 0, 0, 1179793, 0, 0, 1179792, 0, 0, 1179791, 0, 0, 1179790, 0, 0, 1179789, 0, 0, 1179788, 0, 0, 1179787, 0, 0, 1179786, 0, 0, 1179785, 0, 0, 1179784, 0, 0, 1179783, 0, 0, 1179782, 0, 0, 1179781, 0, 0, 1179780, 0, 0, 1179779, 0, 0, 1179778, 0, 0, 1179777, 0, 0, 1179776, 0, 0, 1179775, 0, 0, 1179774, 0, 0, 1179773, 0, 0, 1179772, 0, 0, 1179771, 0, 0, 1179770, 0, 0, 1179769, 0, 0, 1179768, 0, 0, 1179767, 0, 0, 1179766, 0, 0, 1179765, 0, 0, 1179764, 0, 0, 1179763, 0, 0, 1179762, 0, 0, 1179761, 0, 0, 1179760, 0, 0, 1179759, 0, 0, 1179758, 0, 0, 1179757, 0, 0, 1179756, 0, 0, 1179755, 0, 0, 1179754, 0, 0, 1179753, 0, 0, 1179752, 0, 0, 1179751, 0, 0, 1179750, 0, 0, 1179749, 0, 0, 1179748, 0, 0, 1179747, 0, 0, 1179746, 0, 0, 1179745, 0, 0, 1179744, 0, 0)
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
-motion_scale = Vector2(0, 0)
-motion_mirroring = Vector2(1920, 1080)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 4
+follow_viewport_enabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
-light_mask = 7
-visibility_layer = 7
-texture = ExtResource("1_aoxn5")
-centered = false
+[node name="Player" parent="CanvasLayer" instance=ExtResource("1_j5njf")]
+light_mask = 1
+visibility_layer = 16
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+[node name="Visuals" type="Node" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Visuals"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Visuals/ParallaxBackground"]
 motion_scale = Vector2(0.013, 0.013)
 motion_mirroring = Vector2(1920, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
-light_mask = 7
-visibility_layer = 7
+[node name="Sprite2D" type="Sprite2D" parent="Visuals/ParallaxBackground/ParallaxLayer"]
+position = Vector2(0, -165)
 texture = ExtResource("5_0uvb8")
 centered = false
 
-[node name="Player" parent="." instance=ExtResource("1_j5njf")]
-position = Vector2(-22, 175)
+[node name="-3" type="CanvasLayer" parent="Visuals"]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.7
 
-[node name="TileMap" type="TileMap" parent="."]
-light_mask = 3
-visibility_layer = 3
-z_index = 1
-position = Vector2(0, -1)
-tile_set = SubResource("TileSet_xynjm")
-cell_quadrant_size = 100
-format = 2
-layer_0/tile_data = PackedInt32Array(983004, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262161, 1, 0, 262162, 1, 0, 262163, 1, 0, 262164, 1, 0, 262165, 1, 0, 262166, 1, 0, 262167, 1, 0, 262168, 1, 0, 262169, 1, 0, 262172, 0, 0, 131103, 0, 0, 34, 0, 0, 327679, 1, 0, 327678, 1, 0, 327677, 1, 0, 327676, 1, 0, -131035, 0, 0, -262110, 1, 0, -262111, 1, 0, -262112, 1, 0, -262113, 1, 0, -262114, 1, 0, -262115, 1, 0, -262116, 1, 0, -262118, 0, 0, -393193, 0, 0, -524268, 0, 0, -655343, 0, 0, -786418, 0, 0)
-
-[node name="ParallaxForeground" type="ParallaxBackground" parent="."]
+[node name="-2" type="CanvasLayer" parent="Visuals"]
 layer = 2
-scroll_ignore_camera_zoom = true
+follow_viewport_enabled = true
+follow_viewport_scale = 0.8
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxForeground"]
-z_index = 1
-motion_scale = Vector2(1.2, 1.2)
-motion_offset = Vector2(0, 10)
-motion_mirroring = Vector2(1920, 0)
+[node name="-1" type="CanvasLayer" parent="Visuals"]
+layer = 3
+follow_viewport_enabled = true
+follow_viewport_scale = 0.9
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxForeground/ParallaxLayer2"]
-light_mask = 7
-visibility_layer = 7
-position = Vector2(0, 322)
-texture = ExtResource("3_1ix38")
-centered = false
+[node name="Rock1" type="Sprite2D" parent="Visuals/-1"]
+position = Vector2(264, 648)
+texture = ExtResource("3_cf4og")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxForeground"]
-motion_scale = Vector2(1.25, 1.25)
-motion_offset = Vector2(0, 20)
-motion_mirroring = Vector2(1920, 0)
+[node name="Rock2" type="Sprite2D" parent="Visuals/-1"]
+position = Vector2(2524, 506)
+scale = Vector2(-1, 1)
+texture = ExtResource("3_cf4og")
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxForeground/ParallaxLayer"]
-light_mask = 7
-visibility_layer = 7
-position = Vector2(0, 322)
-texture = ExtResource("3_aodxj")
-centered = false
+[node name="0" type="CanvasLayer" parent="Visuals"]
+layer = 4
+follow_viewport_enabled = true
+
+[node name="Path" type="Sprite2D" parent="Visuals/0"]
+modulate = Color(0.45098, 0.45098, 0.45098, 1)
+position = Vector2(241, 841)
+texture = ExtResource("4_qvf5c")
+
+[node name="Path2" type="Sprite2D" parent="Visuals/0/Path"]
+position = Vector2(620, 0)
+texture = ExtResource("4_qvf5c")
+
+[node name="Path3" type="Sprite2D" parent="Visuals/0/Path"]
+position = Vector2(1240, 0)
+texture = ExtResource("4_qvf5c")
+
+[node name="Path4" type="Sprite2D" parent="Visuals/0/Path"]
+position = Vector2(1860, 0)
+texture = ExtResource("4_qvf5c")
+
+[node name="Path5" type="Sprite2D" parent="Visuals/0/Path"]
+position = Vector2(2480, 0)
+texture = ExtResource("4_qvf5c")
+
+[node name="Path6" type="Sprite2D" parent="Visuals/0/Path"]
+position = Vector2(3100, 0)
+texture = ExtResource("4_qvf5c")
+
+[node name="Path7" type="Sprite2D" parent="Visuals/0/Path"]
+position = Vector2(3720, 0)
+texture = ExtResource("4_qvf5c")
+
+[node name="Path8" type="Sprite2D" parent="Visuals/0/Path"]
+position = Vector2(4340, 0)
+texture = ExtResource("4_qvf5c")
+
+[node name="Path9" type="Sprite2D" parent="Visuals/0/Path"]
+position = Vector2(4960, 0)
+texture = ExtResource("4_qvf5c")
+
+[node name="Path10" type="Sprite2D" parent="Visuals/0/Path"]
+position = Vector2(5580, 0)
+texture = ExtResource("4_qvf5c")
+
+[node name="1" type="CanvasLayer" parent="Visuals"]
+layer = 6
+follow_viewport_enabled = true
+follow_viewport_scale = 1.1
+
+[node name="2" type="CanvasLayer" parent="Visuals"]
+layer = 7
+follow_viewport_enabled = true
+follow_viewport_scale = 1.2
+
+[node name="3" type="CanvasLayer" parent="Visuals"]
+layer = 8
+follow_viewport_enabled = true
+follow_viewport_scale = 1.3
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals/3"]
+modulate = Color(0.643137, 0.643137, 0.643137, 1)
+position = Vector2(1692, 702.154)
+texture = ExtResource("3_cf4og")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Visuals"]
+position = Vector2(1249, 668)
+rotation = 2.75534
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals/StaticBody2D"]
+texture = ExtResource("3_cf4og")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Visuals/StaticBody2D"]
+polygon = PackedVector2Array(109, -170, 109, -168.9, 116, -167.9, 116, -166.7, 126, -162.7, 126, -161.6, 134, -157.6, 134, -156.6, 138, -154.6, 138, -153.4, 139.4, -152, 142, -152, 142, -150.4, 144.4, -148, 146.6, -148, 147.6, -146, 150, -146, 150, -144.4, 151.4, -143, 153.3, -143, 165.3, -134, 167.2, -134, 170, -132.6, 170, -131.6, 174, -129.6, 174, -128.4, 175.4, -127, 178, -127, 178, -125.4, 179.4, -124, 182, -124, 182, -122.4, 184.4, -120, 187, -120, 187, -118.4, 203.4, -103, 205.4, -103, 214, -95.5, 214, -93.1, 217, -85.2, 217, -77, 215.9, -77, 213, -56.9, 213, -34, 213.8, -31, 214.8, -31, 217.8, -20, 218.6, -20, 223.6, -9, 224.6, -9, 229.6, 1, 230.6, 1, 235.6, 10, 236.4, 10, 238, 11.6, 238, 13, 240, 14.6, 240, 16, 242, 17.6, 242, 19.6, 245, 22.6, 245, 24, 247, 25.6, 247, 27.8, 248.6, 31, 249.4, 31, 251, 32.6, 251, 34.7, 257, 44.7, 257, 47.7, 261, 54.7, 261, 58.8, 265, 68.8, 265, 73.8, 267, 78.8, 267, 86, 269, 94.9, 269, 150, 270, 150, 270, 155, 270.8, 155, 273.8, 167, 274.7, 167, 286, 199.8, 286, 201.1, 284.9, 211, 283.5, 211, 281.5, 214, 276, 214, 233, 217, 194, 217, 142, 215, 142, 214, 123, 212.9, 123, 211.9, 111, 210.9, 111, 209.9, 42.8, 198, 9.20001, 198, -16.9, 202, -29.9, 202, -47.9, 204, -104.1, 204, -120.1, 202, -212, 202, -212.669, 201.747, -233.283, 202, -233, 202, -240, 148.1, -240, 128, -239, 128, -239, 126, -237.4, 126, -234, 122.6, -234, 120, -232.4, 120, -229, 116.6, -229, 114, -227.4, 114, -217.4, 103, -216, 103, -216, 101, -213.4, 101, -207, 94.6, -207, 92.6, -193.4, 79, -191.4, 79, -188.4, 76, -185.3, 76, -174.3, 70, -171, 70, -147.2, 62, -142.2, 62, -128, 59.2, -128, 58.4, -119, 54.4, -119, 53.6, -113, 47.6, -113, 44.8, -109, 36.8, -109, 32.9, -107, 25.7, -107, 8, -105.8, 8, -100.8, -15, -99.7, -15, -97.7, -21, -96.6, -21, -89.6, -34, -88.5, -34, -78, -46.4, -78, -49, -76.4, -49, -71, -54.4, -71, -57, -69.4, -57, -51.4, -76, -49.4, -76, -32.4, -92, -30.6, -92, -29.6, -94, -27.2, -94, -8, -103.6, -8, -104.6, -2, -107.6, -2, -108.4, 0.600006, -111, 2, -111, 15, -123.4, 16, -125, 18, -127.5, 18, -129.4, 26, -138.4, 27, -140, 27.6, -141, 36, -148, 38.5, -150, 45.6, -156, 47.7, -156, 68.8, -167, 71.8, -167, 78.8, -170, 83, -170, 83, -171)

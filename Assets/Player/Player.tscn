@@ -55,6 +55,7 @@ animations = [{
 light_mask = 7
 visibility_layer = 3
 position = Vector2(620, 283)
+floor_constant_speed = true
 script = ExtResource("1_15og0")
 
 [node name="Camera2D" type="Camera2D" parent="."]

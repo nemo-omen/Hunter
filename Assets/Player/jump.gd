@@ -29,7 +29,7 @@ func physics_process(delta: float) -> int:
 	player.velocity.y += player.gravity * delta
 	player.move_and_slide()
 	
-	if player.velocity.y > 0:
+	if player.velocity.y > -(player.jump_falloff):
 		return State.Fall
 
 	if player.is_on_floor():
