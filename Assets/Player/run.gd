@@ -21,9 +21,10 @@ func physics_process(delta: float) -> int:
 		player.move = 1
 		player.animations.flip_h = false
 	
-	player.velocity.y += player.gravity
+	player.velocity.y += (player.gravity * delta) * player.mass
 	player.velocity.x = player.move * player.move_speed
 	player.move_and_slide()
+	
 	
 	if player.move == 0:
 		return State.Idle

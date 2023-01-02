@@ -38,7 +38,7 @@ func physics_process(delta: float) -> int:
 		player.animations.flip_h = false
 	
 	player.velocity.x = move * player.move_speed
-	player.velocity.y += (player.gravity * delta) * fall_multiplier
+	player.velocity.y += (player.gravity * delta) * player.mass
 	player.move_and_slide()
 
 	if player.is_on_floor():

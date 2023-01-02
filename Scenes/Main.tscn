@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3f8d7mgqvf52"]
+[gd_scene load_steps=8 format=3 uid="uid://c3f8d7mgqvf52"]
 
 [ext_resource type="Texture2D" uid="uid://clgv31e1smim4" path="res://GFX/GrayTile.png" id="1_81w23"]
 [ext_resource type="PackedScene" uid="uid://ca87cokrl525a" path="res://Assets/Player/Player.tscn" id="1_j5njf"]
 [ext_resource type="Texture2D" uid="uid://2v6pdntct3ki" path="res://GFX/TestScene/Rock1.png" id="3_cf4og"]
 [ext_resource type="Texture2D" uid="uid://cnl64sj5g575p" path="res://GFX/MtBG.png" id="5_0uvb8"]
+[ext_resource type="Texture2D" uid="uid://cqor58xumtqh8" path="res://GFX/Rock1.png" id="5_ggpk6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yi865"]
 texture = ExtResource("1_81w23")
@@ -51,6 +52,11 @@ centered = false
 [node name="-3" type="CanvasLayer" parent="Visuals"]
 follow_viewport_enabled = true
 follow_viewport_scale = 0.7
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals/-3"]
+position = Vector2(1555, 640)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_ggpk6")
 
 [node name="-2" type="CanvasLayer" parent="Visuals"]
 layer = 2

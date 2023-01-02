@@ -1,11 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://ca87cokrl525a"]
+[gd_scene load_steps=23 format=3 uid="uid://ca87cokrl525a"]
 
 [ext_resource type="Script" path="res://Assets/Player/player.gd" id="1_15og0"]
 [ext_resource type="Texture2D" uid="uid://b7l3ljhwdmjip" path="res://GFX/MildLight.png" id="2_kcwil"]
 [ext_resource type="Script" path="res://Assets/Player/Camera2D.gd" id="2_y3m7m"]
 [ext_resource type="Texture2D" uid="uid://7pt2wymp5iqx" path="res://GFX/hunterrun0000.png" id="4_5yeca"]
+[ext_resource type="Texture2D" uid="uid://dhami1h8mgita" path="res://GFX/HunterDash.png" id="4_e8hxl"]
 [ext_resource type="Texture2D" uid="uid://6rcgjxs7l8cl" path="res://GFX/hunterrun0004.png" id="5_kiqsf"]
 [ext_resource type="Texture2D" uid="uid://dy6rjdl4cf3hv" path="res://GFX/hunterrun0006.png" id="6_vifoo"]
+[ext_resource type="Texture2D" uid="uid://crkcim4mshutn" path="res://GFX/HunterIdle.png" id="6_x6nqr"]
 [ext_resource type="Texture2D" uid="uid://caatttjkni15l" path="res://GFX/hunterrun0001.png" id="7_i57fr"]
 [ext_resource type="Texture2D" uid="uid://dstoe3iwbqaal" path="res://GFX/hunterrun0002.png" id="7_xj2s6"]
 [ext_resource type="Texture2D" uid="uid://bvof733oha1fc" path="res://GFX/hunterrun0003.png" id="9_3a3ox"]
@@ -25,18 +27,18 @@ height = 144.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i17q2"]
 animations = [{
-"frames": [ExtResource("9_3a3ox")],
-"loop": false,
+"frames": [ExtResource("4_e8hxl")],
+"loop": true,
 "name": &"dash",
 "speed": 5.0
 }, {
 "frames": [ExtResource("6_vifoo")],
-"loop": false,
+"loop": true,
 "name": &"fall",
 "speed": 8.0
 }, {
-"frames": [ExtResource("6_vifoo")],
-"loop": false,
+"frames": [ExtResource("6_x6nqr")],
+"loop": true,
 "name": &"idle",
 "speed": 8.0
 }, {
@@ -60,6 +62,7 @@ script = ExtResource("1_15og0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2(1.5, 1.5)
 limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("2_y3m7m")

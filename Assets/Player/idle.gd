@@ -10,7 +10,7 @@ func input(event: InputEvent) -> int:
 	return State.Null
 
 func physics_process(delta: float) -> int:
-	player.velocity.y += player.gravity
+	player.velocity.y += (player.gravity * delta) * player.mass
 	player.move_and_slide()
 
 	if !player.is_on_floor():
