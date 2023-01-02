@@ -2,6 +2,7 @@ extends BaseState
 
 @export var dash_time: float =0.6
 var dash_timer: float = 0
+var dash_particles = get_node('dash_particles')
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,6 +13,10 @@ func enter(last_state: int) -> void:
 	dash_timer = dash_time
 	player.velocity.y = 0
 	player.move = player.direction()
+	dash_particles.set_emitting(true)
+func exit() -> void:
+	super.exit()
+	dash_particles.set_emitting(false)
 
 func input(event: InputEvent) -> int:
 	if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
