@@ -14,6 +14,7 @@ func enter(last_state: int) -> void:
 	player.velocity.y = 0
 	player.move = player.direction()
 	dash_particles.set_emitting(true)
+	
 func exit() -> void:
 	super.exit()
 	dash_particles.set_emitting(false)
