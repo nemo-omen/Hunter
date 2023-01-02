@@ -93,7 +93,7 @@ polygon = PackedVector2Array(-16, -24, 17, -24, 17, 23, -16, 23)
 [node name="animations" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 frames = SubResource("SpriteFrames_i17q2")
-animation = &"dash"
+animation = &"idle"
 script = ExtResource("12_8mijn")
 
 [node name="state_manager" type="Node" parent="."]
@@ -117,6 +117,7 @@ animation_name = "run"
 
 [node name="dash" type="Node" parent="state_manager"]
 script = ExtResource("18_0003m")
+animation_name = "dash"
 
 [connection signal="animate" from="." to="animations" method="_on_player_animate"]
 [connection signal="camreset" from="." to="Camera2D" method="_on_player_camreset"]
