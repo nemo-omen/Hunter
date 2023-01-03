@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ca87cokrl525a"]
+[gd_scene load_steps=25 format=3 uid="uid://ca87cokrl525a"]
 
 [ext_resource type="Script" path="res://Assets/Player/player.gd" id="1_15og0"]
 [ext_resource type="Texture2D" uid="uid://b7l3ljhwdmjip" path="res://GFX/MildLight.png" id="2_kcwil"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Assets/Player/AnimatedSprite2D.gd" id="12_8mijn"]
 [ext_resource type="Script" path="res://Assets/Player/state_manager.gd" id="13_l12rt"]
 [ext_resource type="Script" path="res://Assets/Player/idle.gd" id="14_2fet2"]
+[ext_resource type="Texture2D" uid="uid://dk6wp8al1ivib" path="res://GFX/HunterDashParticle.png" id="15_ih2qk"]
 [ext_resource type="Script" path="res://Assets/Player/run.gd" id="15_nod5l"]
 [ext_resource type="Script" path="res://Assets/Player/jump.gd" id="16_7glxh"]
 [ext_resource type="Script" path="res://Assets/Player/fall.gd" id="17_86aad"]
@@ -54,21 +55,24 @@ animations = [{
 }]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yat3p"]
-lifetime_randomness = 0.17
 emission_shape = 1
 emission_sphere_radius = 28.51
 particle_flag_disable_z = true
-direction = Vector3(0, 1, 0)
-spread = 33.1
-gravity = Vector3(-98, 0, 0)
+direction = Vector3(0, 0, 0)
+spread = 50.95
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 tangential_accel_max = 69.43
 scale_min = 0.0
 scale_max = 2.0
-color = Color(0.180392, 0.180392, 0.180392, 1)
+color = Color(0.627451, 0.627451, 0.627451, 1)
 turbulence_noise_strength = 0.0
 turbulence_noise_scale = 0.0
+anim_speed_max = 1.85
+anim_offset_max = 2.12
 sub_emitter_keep_velocity = true
 
 [node name="Player" type="CharacterBody2D"]
@@ -115,11 +119,13 @@ animation = &"idle"
 script = ExtResource("12_8mijn")
 
 [node name="dash_particles" type="GPUParticles2D" parent="."]
-amount = 1024
+emitting = false
+amount = 2048
 process_material = SubResource("ParticleProcessMaterial_yat3p")
-lifetime = 1.5
-randomness = 0.46
-local_coords = true
+texture = ExtResource("15_ih2qk")
+one_shot = true
+randomness = 1.0
+trail_lifetime = 0.01
 
 [node name="state_manager" type="Node" parent="."]
 script = ExtResource("13_l12rt")

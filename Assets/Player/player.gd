@@ -15,7 +15,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animations = $animations
 @onready var states = $state_manager
-
+@onready var dash_particles = $dash_particles
 var move: int = 0
 
 signal animate
@@ -25,7 +25,7 @@ signal camreset
 func _ready() -> void:
 	states.init(self)
 	print(ProjectSettings.get_setting('physics/common/physics_ticks_per_second'))
-
+	print(dash_particles)
 func _unhandled_input(event: InputEvent) -> void:
 	states.input(event)
 
