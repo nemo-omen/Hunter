@@ -22,10 +22,6 @@
 [ext_resource type="Script" path="res://Assets/Player/fall.gd" id="17_86aad"]
 [ext_resource type="Script" path="res://Assets/Player/dash.gd" id="18_0003m"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6wge"]
-radius = 38.0
-height = 144.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_i17q2"]
 animations = [{
 "frames": [ExtResource("4_e8hxl")],
@@ -75,6 +71,10 @@ anim_speed_max = 1.85
 anim_offset_max = 2.12
 sub_emitter_keep_velocity = true
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6wge"]
+radius = 12.0
+height = 144.0
+
 [node name="Player" type="CharacterBody2D"]
 light_mask = 7
 visibility_layer = 3
@@ -84,15 +84,9 @@ script = ExtResource("1_15og0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2(1.5, 1.5)
 limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("2_y3m7m")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("CapsuleShape2D_e6wge")
-debug_color = Color(0.34902, 0.482353, 1, 0.823529)
 
 [node name="InnerDarkness" type="PointLight2D" parent="."]
 visible = false
@@ -126,6 +120,12 @@ texture = ExtResource("15_ih2qk")
 one_shot = true
 randomness = 1.0
 trail_lifetime = 0.01
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-4, 0)
+shape = SubResource("CapsuleShape2D_e6wge")
+debug_color = Color(0.34902, 0.482353, 1, 0.823529)
 
 [node name="state_manager" type="Node" parent="."]
 script = ExtResource("13_l12rt")
